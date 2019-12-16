@@ -1,0 +1,25 @@
+# Start docker
+% docker run -itd --name ubuntu ubuntu sh -c 'echo "Input website:"; read website; echo "Searching..."; sleep 1; curl http://$website '
+
+# Install curl in another process
+% docker exec -it ubuntu bash
+root@5df77ca5e3b6:/# apt-get update; apt-get install curl
+root@5df77ca5e3b6;/# exit
+
+# Attach to the container and give input
+% docker attach ubuntu
+helsinki.fi 
+Searching...
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+%
+
+---
+
+# Install curl in the same process, before asking for user input
+% docker run -it --name ubuntu ubuntu sh -c 'apt-get update; yes Y | apt-get install curl; echo "Input website:"; read website; echo "Searching..."; sleep 1; curl $website '

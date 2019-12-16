@@ -1,0 +1,18 @@
+$ docker run -d devopsdockeruh/exec_bash_exercise 
+8eda9b6d204278532aa19e33c1c97f9859e382f68107447fff53521231675382
+$ docker ps -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS                      PORTS               NAMES
+8eda9b6d2042        devopsdockeruh/exec_bash_exercise   "node index"        5 seconds ago       Up 3 seconds                                    brave_lederberg
+$ docker exec -it brave_lederberg bash
+root@8eda9b6d2042:/usr/app# tail -f logs.txt 
+Mon, 16 Dec 2019 17:21:51 GMT
+Mon, 16 Dec 2019 17:21:54 GMT
+Mon, 16 Dec 2019 17:21:57 GMT
+Mon, 16 Dec 2019 17:22:00 GMT
+Secret message is:
+"Docker is easy"
+Mon, 16 Dec 2019 17:22:06 GMT
+Mon, 16 Dec 2019 17:22:09 GMT
+Mon, 16 Dec 2019 17:22:12 GMT
+^C
+
