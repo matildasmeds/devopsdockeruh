@@ -1,0 +1,4 @@
+# Create a file, otherwise docker creates a folder
+$ touch logs.txt
+# Run container
+$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
