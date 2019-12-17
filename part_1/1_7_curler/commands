@@ -1,0 +1,8 @@
+# Make script executable
+chmod +x curl_script.sh
+
+# Build docker image
+docker build -t curler .
+
+# Start container
+docker run -it curler

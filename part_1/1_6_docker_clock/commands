@@ -1,0 +1,3 @@
+# Tag the image
+docker build -t docker-clock . 
+
