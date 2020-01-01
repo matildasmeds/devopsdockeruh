@@ -1,3 +1,8 @@
+% git clone https://github.com/docker-hy/backend-example-docker
+% cd backend-example-docker
+
+# Add Dockerfile to directory
+
 % docker build -t backend_example .
 % touch logs.txt
 % docker run -p 8000:8000 -v ${PWD}/logs.txt:/my_app/logs.txt backend_example
