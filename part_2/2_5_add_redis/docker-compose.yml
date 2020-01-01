@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  backend:
+    image: backend_example
+    ports:
+      - "8888:8000"
+    environment:
+      - "FRONT_URL=http://localhost:8889"
+      - "REDIS=redis"
+
+  redis:
+    image: redis_container
+    ports:
+      - "6379:6379"
+
+  frontend:
+    image: frontend_example
+    ports:
+      - "8889:5000"
+    environment:
+      - "API_URL=http://localhost:8888"

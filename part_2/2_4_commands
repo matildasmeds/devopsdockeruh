@@ -1,0 +1,6 @@
+% git clone https://github.com/docker-hy/scaling-exercise
+% cd scaling-exercise
+% docker-compose up --scale compute=5
+
+# Even without scale parameter the app run fast enough on my laptop, to complete the test before timer depleted
+# For sure, it does run faster in parallel.
